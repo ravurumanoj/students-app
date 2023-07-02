@@ -1,0 +1,21 @@
+<mat-table [dataSource]="winnersDataSource" matSort>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+    <mat-cell *matCellDef="let winner">{{ winner.name }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="score">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Score</mat-header-cell>
+    <mat-cell *matCellDef="let winner">{{ winner.score }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="age">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Age</mat-header-cell>
+    <mat-cell *matCellDef="let winner">{{ winner.age }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+</mat-table>

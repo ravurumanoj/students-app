@@ -1,0 +1,21 @@
+<mat-table [dataSource]="toppersDataSource" matSort>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.name }}</mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="age">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Age</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.age }}</mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="score">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Score</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.score }}</mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let user; columns: displayedColumns"></mat-row>
+</mat-table>
+  

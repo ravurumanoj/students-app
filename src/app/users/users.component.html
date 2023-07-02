@@ -1,0 +1,26 @@
+<mat-table [dataSource]="usersDataSource" matSort>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header><h3>Name</h3></mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.name }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="age">
+      <mat-header-cell *matHeaderCellDef mat-sort-header><h3>Age</h3></mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.age }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="score">
+      <mat-header-cell *matHeaderCellDef mat-sort-header><h3>Score</h3></mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.score }}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        <button mat-button (click)="addToWinners(user)">Add to Winners</button>
+      </mat-cell>
+    </ng-container>
+ 
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let user; columns: displayedColumns"></mat-row>
+</mat-table>
+
+  
